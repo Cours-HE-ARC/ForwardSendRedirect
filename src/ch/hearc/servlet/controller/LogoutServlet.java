@@ -30,7 +30,7 @@ public class LogoutServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		req.getSession().removeAttribute("userLogged");
-		req.setAttribute("logout-ok", "Logout effectué avec succès");
+		req.getSession().setAttribute("logout-ok", "Logout effectué avec succès");
 		resp.sendRedirect("");
 		
 	}

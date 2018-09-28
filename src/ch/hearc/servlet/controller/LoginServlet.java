@@ -29,6 +29,8 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		req.getSession().removeAttribute("logout-ok");
+		
 		Utilisateur loginUtilisateur = new Utilisateur(req.getParameter("username"),req.getParameter("pass"));
 		
 		Optional<Utilisateur> utilisateur = udao.authentifieUtilisateur(loginUtilisateur);

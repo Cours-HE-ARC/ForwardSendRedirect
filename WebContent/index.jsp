@@ -25,7 +25,7 @@
 <% 
 
 String loginFailed = (String)request.getAttribute("login-failed");
-String logoutOk = (String)request.getAttribute("logout-ok");
+String logoutOk = (String)session.getAttribute("logout-ok");
 
 if(null != loginFailed){
 	%>
